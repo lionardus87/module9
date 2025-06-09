@@ -1,8 +1,8 @@
 "use strict";
 const Models = require("../models");
 // finds all users in DB, then sends array as response
-const getPosts = (res) => {
-	Models.Post.findAll({
+const getComments = (res) => {
+	Models.Comment.findAll({
 		include: {
 			model: Models.User,
 			required: false,
@@ -18,8 +18,8 @@ const getPosts = (res) => {
 		});
 };
 // uses JSON from request body to create new user in DB
-const createPost = (data, res) => {
-	Models.Post.create(data)
+const createComment = (data, res) => {
+	Models.Comment.create(data)
 		.then((data) => {
 			res.send({ result: 200, data: data });
 		})
@@ -29,6 +29,6 @@ const createPost = (data, res) => {
 		});
 };
 module.exports = {
-	getPosts,
-	createPost,
+	getComments,
+	createComment,
 };

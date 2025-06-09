@@ -11,25 +11,21 @@ User.init(
 			autoIncrement: true,
 			primaryKey: true,
 		},
-		firstName: {
+		userName: {
 			type: DataTypes.STRING,
 			allowNull: false,
 		},
-		lastName: {
-			type: DataTypes.STRING,
-			allowNull: false,
-		},
-		emailId: {
+		email: {
 			type: DataTypes.STRING,
 			allowNull: false,
 			unique: true,
 		},
 		password: {
 			type: DataTypes.STRING,
-			allowNull: false,
 		},
-		age: {
-			type: DataTypes.INTEGER,
+		createdAt: {
+			type: DataTypes.DATE,
+			defaultValue: DataTypes.NOW,
 		},
 	},
 	{
